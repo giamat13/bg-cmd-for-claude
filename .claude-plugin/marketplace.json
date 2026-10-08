@@ -1,0 +1,1 @@
+{"name":"bg-local","owner":{"name":"giamat13"},"plugins":[{"name":"bg-runner","source":"./","description":"Run long Bash commands in the background"}]}
