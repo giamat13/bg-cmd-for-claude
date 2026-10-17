@@ -8,7 +8,7 @@ description: Use for every Bash and PowerShell command except a bare trivial one
 - Anything else is background: any `&&`, `;`, `||`, `|` or heredoc, and any other program (python, node, npx, tsc, playwright, sed, builds, tests, installs).
 - A leading `cd X;` / `cd X &&` is NOT trivial and never makes the command foreground. Judge by the rest; if anything non-trivial follows, background it.
 - Needing the result is NOT a reason for foreground: launch in background, do other work, then read the output when it's needed.
-- Set an explicit `timeout` on every command expected to take more than ~7 seconds (builds, tests, installs, network calls, long scripts). Pick a value that fits the expected duration with margin, so a hung command can't run forever.
+- Set an explicit `timeout` on every command expected to take more than ~5 seconds (builds, tests, installs, network calls, long scripts). Pick a value that fits the expected duration with margin, so a hung command can't run forever.
 - Don't poll or wait. Read only the tail or error lines (`tail -n 30`, `grep -iE "error|fail"`), never the whole output.
 - Redirect long output to a log file (`cmd > run.log 2>&1`) and read only what's needed.
 - Don't announce each launched command. Report only failures or when a decision from the user is needed.
